@@ -2,9 +2,19 @@
   "name": "snapdb",
   "description": "SnapDB is a high-performance, easy-to-use JSON database for Node.js. Featuring asynchronous operations and advanced indexing, it ensures fast and efficient data management.",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/core/index.js",
   "scripts": {},
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bshal/snapdb.git"
+  },
+  "keywords": [
+    "database",
+    "json",
+    "nodejs",
+    "indexing",
+    "async"
+  ],
   "author": "Bishal Chettri",
   "license": "MIT",
   "dependencies": {
