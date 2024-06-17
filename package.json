@@ -6,5 +6,11 @@
   "scripts": {},
   "keywords": [],
   "author": "Bishal Chettri",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }
