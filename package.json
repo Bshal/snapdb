@@ -3,7 +3,10 @@
   "description": "SnapDB is a high-performance, easy-to-use JSON database for Node.js. Featuring asynchronous operations and advanced indexing, it ensures fast and efficient data management.",
   "version": "1.0.0",
   "main": "src/core/index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/bshal/snapdb.git"
@@ -22,5 +25,8 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "jest": {
+    "setupFiles": ["<rootDir>/tests/setup.js"]
   }
 }
