@@ -20,6 +20,7 @@
   ],
   "author": "Bishal Chettri",
   "license": "MIT",
+  "homepage": "https://github.com/bshal/snapdb#readme",
   "dependencies": {
     "lodash": "^4.17.21"
   },
