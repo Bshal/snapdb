@@ -5,7 +5,9 @@ class IndexManager {
 
   initialize(data) {
     for (const collection in data) {
-      this.indexes[collection] = {};
+      if (!this.indexes[collection]) {
+        this.indexes[collection] = {};
+      }
       for (const item of data[collection]) {
         this.add(collection, item);
       }
@@ -13,6 +15,9 @@ class IndexManager {
   }
 
   add(collection, item) {
+    if (!this.indexes[collection]) {
+      this.indexes[collection] = {};
+    }
     for (const key in item) {
       if (!this.indexes[collection][key]) {
         this.indexes[collection][key] = {};
@@ -29,24 +34,21 @@ class IndexManager {
     for (const item of items) {
       for (const key in item) {
         const value = item[key];
-        const indexArray = this.indexes[collection][key][value];
-        if (indexArray) {
-          this.indexes[collection][key][value] = indexArray.filter(i => i !== item);
+        if (this.indexes[collection][key] && this.indexes[collection][key][value]) {
+          this.indexes[collection][key][value] = this.indexes[collection][key][value].filter(i => i.id !== item.id);
         }
       }
     }
   }
 
   query(collection, query) {
-    const queryKeys = Object.keys(query);
-    if (queryKeys.length === 1) {
-      const key = queryKeys[0];
-      const value = query[key];
-      return this.indexes[collection][key] && this.indexes[collection][key][value]
-        ? this.indexes[collection][key][value]
-        : null;
-    }
-    return null;
+    const keys = Object.keys(query);
+    if (keys.length === 0) return [];
+    const key = keys[0];
+    const value = query[key];
+    return this.indexes[collection] && this.indexes[collection][key] && this.indexes[collection][key][value]
+      ? this.indexes[collection][key][value]
+      : [];
   }
 }
 
