@@ -1,6 +1,6 @@
 # SnapDB
 
-SnapDB is a high-performance, easy-to-use JSON database for Node.js. Featuring asynchronous operations and advanced indexing, it ensures fast and efficient data management.
+> SnapDB is a high-performance, easy-to-use JSON database for Node.js. Featuring asynchronous operations and advanced indexing, it ensures fast and efficient data management.
 
 ## Installation
 
