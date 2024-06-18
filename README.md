@@ -7,13 +7,13 @@
 To install the package, use npm:
 
 ```bash
-npm install snapdb
+npm install @bshal/snapdb
 ```
 
 ## Usage Examples
 ### Loading and Inserting Data (using FileAdapter)
 ```javascript
-const { Database, FileAdapter } = require('snapdb');
+const { Database, FileAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new FileAdapter('db.json');
@@ -34,7 +34,7 @@ const { Database, FileAdapter } = require('snapdb');
 
 ### Using MemoryAdapter
 ```javascript
-const { Database, MemoryAdapter } = require('snapdb');
+const { Database, MemoryAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new MemoryAdapter();
@@ -55,7 +55,7 @@ const { Database, MemoryAdapter } = require('snapdb');
 
 ### Querying Data
 ```javascript
-const { Database, FileAdapter } = require('snapdb');
+const { Database, FileAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new FileAdapter('db.json');
@@ -75,7 +75,7 @@ const { Database, FileAdapter } = require('snapdb');
 
 ### Updating Data
 ```javascript
-const { Database, FileAdapter } = require('snapdb');
+const { Database, FileAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new FileAdapter('db.json');
@@ -96,7 +96,7 @@ const { Database, FileAdapter } = require('snapdb');
 
 #### Removing Data
 ```javascript
-const { Database, FileAdapter } = require('snapdb');
+const { Database, FileAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new FileAdapter('db.json');
@@ -115,7 +115,7 @@ const { Database, FileAdapter } = require('snapdb');
 
 #### Complete CRUD Operations
 ```javascript
-const { Database, FileAdapter } = require('snapdb');
+const { Database, FileAdapter } = require('@bshal/snapdb');
 
 (async () => {
   const adapter = new FileAdapter('db.json');
