@@ -44,7 +44,8 @@ class Database {
 
   find(collection, query) {
     try {
-      return this.indexManager.query(collection, query) || _.filter(this.data[collection], query);
+      const indexedResults = this.indexManager.query(collection, query);
+      return indexedResults.length > 0 ? indexedResults : _.filter(this.data[collection], query);
     } catch (error) {
       logger.error(`Error querying ${collection} with ${JSON.stringify(query)}: ${error.message}`);
       throw error;
