@@ -1,7 +1,7 @@
 {
   "name": "@bshal/snapdb",
   "description": "SnapDB is a fast, zero-dependency JSON database for Node.js with MongoDB-style queries, automatic indexing, atomic writes and batched saves.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "src/core/index.js",
   "scripts": {
     "test": "jest",
