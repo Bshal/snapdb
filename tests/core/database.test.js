@@ -59,7 +59,7 @@ describe('Database', () => {
     });
 
     test('should log error if insertion fails', async () => {
-      db.save = jest.fn().mockRejectedValue(new Error('Save error'));
+      db.adapter.save = jest.fn().mockRejectedValue(new Error('Save error'));
       await expect(db.insert('users', { id: 1, name: 'Alice' })).rejects.toThrow('Save error');
     });
   });
@@ -81,7 +81,7 @@ describe('Database', () => {
     });
 
     test('should log error if query fails', () => {
-      db.indexManager.query = jest.fn().mockImplementation(() => { throw new Error('Query error'); });
+      db.indexManager.candidates = jest.fn().mockImplementation(() => { throw new Error('Query error'); });
       expect(() => db.find('users', { name: 'Alice' })).toThrow('Query error');
     });
   });
@@ -106,7 +106,7 @@ describe('Database', () => {
     });
 
     test('should log error if removal fails', async () => {
-      db.save = jest.fn().mockRejectedValue(new Error('Save error'));
+      db.adapter.save = jest.fn().mockRejectedValue(new Error('Save error'));
       await expect(db.remove('users', { name: 'Alice' })).rejects.toThrow('Save error');
     });
   });

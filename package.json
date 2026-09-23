@@ -1,11 +1,12 @@
 {
   "name": "@bshal/snapdb",
-  "description": "SnapDB is a high-performance, easy-to-use JSON database for Node.js. Featuring asynchronous operations and advanced indexing, it ensures fast and efficient data management.",
+  "description": "SnapDB is a fast, zero-dependency JSON database for Node.js with MongoDB-style queries, automatic indexing, atomic writes and batched saves.",
   "version": "1.0.0",
   "main": "src/core/index.js",
   "scripts": {
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "bench": "node bench/bench.js"
   },
   "repository": {
     "type": "git",
@@ -16,18 +17,30 @@
     "json",
     "nodejs",
     "indexing",
-    "async"
+    "async",
+    "embedded",
+    "mongodb-query",
+    "zero-dependency"
   ],
   "author": "Bishal Chettri",
   "license": "MIT",
   "homepage": "https://github.com/bshal/snapdb#readme",
-  "dependencies": {
-    "lodash": "^4.17.21"
-  },
   "devDependencies": {
     "jest": "^29.7.0"
   },
   "jest": {
-    "setupFiles": ["<rootDir>/tests/setup.js"]
+    "setupFiles": [
+      "<rootDir>/tests/setup.js"
+    ]
+  },
+  "types": "index.d.ts",
+  "files": [
+    "src",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
   }
 }

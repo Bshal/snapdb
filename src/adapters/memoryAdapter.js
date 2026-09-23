@@ -1,6 +1,6 @@
 class MemoryAdapter {
-  constructor() {
-    this.data = {};
+  constructor(initialData = {}) {
+    this.data = initialData;
   }
 
   async load() {
